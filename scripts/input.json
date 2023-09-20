@@ -1,0 +1,19 @@
+{   
+"ARorder": 2000,
+"ID": "WDF_test",
+"ResamplingFactor": 2,
+"channel": "H1:GWOSC-4KHZ_R1_STRAIN",
+"dir": "local_dir/",
+"file": "../examples/data/test.gwf",
+"gps": 1167556608,
+"learn": 200,
+"len": 1.0,
+"nproc": 4,
+"outdir": "local_dir/",
+"overlap": 2,
+"preWhite": 2,
+"run": "offLine",
+"segments": [[1167556608, 1167556908]],
+"threshold": 1.0,
+"window": 512
+}

@@ -1,0 +1,15 @@
+docs/_build
+wdf/observers/__pycache__
+wdf/processes/__pycache__
+wdf/structures/__pycache__
+wdf/config/__pycache__
+example/local_dir
+example/local_dir/test
+build/
+dist/
+wdf.egg-info/
+examples/LVcoeff-AR2000-fs4096-V1:GWOSC-4KHZ_R1_STRAIN.txt
+examples/ARcoeff-AR2000-fs4096-V1:GWOSC-4KHZ_R1_STRAIN.txt
+examples/.ipynb_checkpoints/InverseWhitening-checkpoint.ipynb
+.eggs/
+

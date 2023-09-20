@@ -1,0 +1,36 @@
+[project]
+name = "wdf"
+version ="2.2.3"
+authors = [
+  { name="Elena Cuoco", email="elena.cuoco@ego-gw.it" },
+]
+dependencies = [
+  'pytsa',
+  'numpy', 
+  'scipy',
+  'pytest',
+  'wheel',
+  'coloredlogs'
+   ]
+ 
+maintainers = [
+    { name="Alberto Iess", email="alberto.ies@sns.its" },
+    { name="Francesco Di Renzo", email="francesco.direnzo@ego-gw.it" },
+    { name="Filip Morawski", email="filipmor92@gmail.com" },
+]
+description = "Implement the Wavelet Detection Filter (WDF) to generate triggers for transient signals"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://wdfpipe.gitlab.io/"
+"Bug Tracker"= "https://gitlab.com/wdfpipe/wdf/issues" 
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

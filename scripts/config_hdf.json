@@ -1,0 +1,16 @@
+{
+  "run": "test_run",
+  "dir": "../examples/data",
+  "channel": "segment",
+  "outdir": "./out_data_",
+  "ARorder": 1000,
+  "learn": 30,
+  "sampling": 4096,
+  "len": 1.0,
+  "window": 512,
+  "overlap": 2,
+  "threshold":2.0,
+  "ResamplingFactor":1
+  }
+
+

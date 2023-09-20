@@ -1,0 +1,73 @@
+image: 
+  name: docker:stable
+services:
+  - name: docker:19.03-dind
+    command: ["--experimental"] 
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_CLI_EXPERIMENTAL: enabled
+   
+
+stages:
+  - build
+  - test
+  - deploy
+  - release
+ 
+
+before_script:
+  - echo "$DOCKER_HUB_PWD" | docker login -u "$DOCKER_HUB_USER" --password-stdin
+  - VERSION_SUFFIX=$( if [ "$CI_COMMIT_REF_NAME" != "master" ] ; then echo $CI_COMMIT_REF_NAME | sed 's/[^a-zA-Z0-9]/-/g' ;  else echo latest; fi  )
+cache:
+  paths:
+  - tmp/
+
+  
+
+build:install_dependencies:
+  image: wdfteam/env_wdf:2.2.2
+  stage: build
+  before_script: []
+  script:
+    - python setup.py install
+ 
+test:unit_test:
+  image: wdfteam/env_wdf:2.2.2
+  stage: test
+  before_script: []
+  script:
+    - python -m unittest discover tests/
+
+prepare:wdfpipe:
+  stage: deploy 
+  only:
+    - branches
+  except:
+    - tags  
+  script:
+    - IMAGE_NAME=wdfteam/wdfpipe
+    - IMAGE_VERSION=$(head -n1 version.txt)${VERSION_SUFFIX}
+    - docker build  -t ${IMAGE_NAME}:${IMAGE_VERSION} -f ./dockers/wdfpipe/Dockerfile .
+    - docker push  ${IMAGE_NAME}:${IMAGE_VERSION}  
+  dependencies:
+    - build:install_dependencies
+    - test:unit_test
+  timeout: 1 hours 00 minutes 
+ 
+
+release_job:wdfpipe_release:
+  stage: release
+  rules:
+    - if: $CI_COMMIT_TAG                 # Run this job when a tag is created
+  script:
+    - IMAGE_NAME=wdfteam/wdfpipe
+    - IMAGE_VERSION=$CI_COMMIT_TAG
+    - docker build  -t ${IMAGE_NAME}:${IMAGE_VERSION} -f ./dockers/wdfpipe/Dockerfile .
+    - docker push  ${IMAGE_NAME}:${IMAGE_VERSION}  
+  dependencies:
+    - build:install_dependencies
+    - test:unit_test
+  timeout: 1 hours 00 minutes 
+ 
+    
+ 

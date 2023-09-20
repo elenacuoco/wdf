@@ -1,0 +1,117 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "@type": "SoftwareSourceCode",
+    "license": "https://spdx.org/licenses/GPL-3.0",
+    "codeRepository": "https://gitlab.com/wdfpipe/wdf",
+    "dateCreated": "2020-04-17",
+    "datePublished": "2023-02-27",
+    "dateModified": "2023-08-02",
+    "issueTracker": "https://gitlab.com/wdfpipe/wdf/-/issues",
+    "name": "Wavelet Detection Filter",
+    "version": "2.2.3",
+    "description": "The Wavelet Detection Filter is an open source Python package devised to search for transient signals detected by gravitational waves detectors. These signals include gravitational waves from astrophysical sources but also instrumental artifacts found in detector data, called glitches. As a search pipeline, WDF utilizes Wavelet decomposition and de-noising of the signal.",
+    "applicationCategory": "Astrophysics",
+    "releaseNotes": "Added changes for compatibility with Wavefier framework.",
+    "funding": "ESCAPE 824064",
+    "developmentStatus": "active",
+    "readme": "https://wdfpipe.gitlab.io",
+    "softwareVersion": "2.2.3",
+    "funder": {
+        "@type": "Organization",
+        "name": "European Union's Horizon 2020 research and innovation programme"
+    },
+    "keywords": [
+        "EGO-Virgo\nGravitational Waves\nAstroparticle \nWavelet"
+    ],
+    "programmingLanguage": [
+        "Python 3.10 or greater"
+    ],
+    "operatingSystem": [
+        "Linux",
+        "Windows",
+        "MacOS"
+    ],
+    "softwareRequirements": [
+        "p4TSA",
+        "pytsa",
+        "numpy",
+        "scipy",
+        "pytest",
+        "wheel",
+        "coloredlogs"
+    ],
+    "author": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-6528-3449",
+            "givenName": "Elena",
+            "familyName": "Cuoco",
+            "email": "elena.cuoco@ego-gw.it",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "European Gravitational Observatory, Scuola Normale Superiore"
+            }
+        }
+    ],
+    "contributor": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-9658-6752",
+            "givenName": "Alberto",
+            "familyName": "Iess",
+            "email": "albertoj@hotmail.it",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Scuola Normale Superiore"
+            }
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-6194-8239",
+            "givenName": "Filip",
+            "familyName": "Morawski",
+            "email": "filipmor92@gmail.com"
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-5447-3810",
+            "givenName": "Francesco",
+            "familyName": "Di Renzo",
+            "email": "f.di-renzo@ip2i.in2p3.fr",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Université Claude Bernard Lyon 1, CNRS"
+            }
+        },
+        {
+            "@type": "Person",
+            "givenName": "Alessandro",
+            "familyName": "Staniscia",
+            "email": "alessandro@staniscia.net"
+        },
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0002-6528-3449",
+            "givenName": "Elena",
+            "familyName": "Cuoco",
+            "email": "elena.cuoco@ego-gw.it",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "European Gravitational Observatory, Scuola Normale Superiore"
+            }
+        }
+    ],
+    "maintainer": [
+        {
+            "@type": "Person",
+            "@id": "https://orcid.org/0000-0001-9658-6752",
+            "givenName": "Alberto",
+            "familyName": "Iess",
+            "email": "albertoj@hotmail.it",
+            "affiliation": {
+                "@type": "Organization",
+                "name": "Scuola Normale Superiore"
+            }
+        }
+    ]
+}
